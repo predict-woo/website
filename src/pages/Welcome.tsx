@@ -45,7 +45,10 @@ C:\>`);
     const data = await response.json();
     const ipText = data.ip;
 
-    const locationResponse = await fetch("http://ip-api.com/json/" + data.ip);
+    const locationResponse = await fetch(
+      "https://corsproxy.io/?" +
+        encodeURIComponent("http://ip-api.com/json/" + data.ip)
+    );
     const location = await locationResponse.json();
     const locationText =
       location.country + ", " + location.regionName + ", " + location.city;
