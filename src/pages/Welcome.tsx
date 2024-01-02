@@ -37,7 +37,7 @@ C:\>`);
 
   const [index, setIndex] = useState(0);
   const canvas = useRef<HTMLCanvasElement>(null);
-  const [location, setLocation] = useLocation();
+  const [_, setLocation] = useLocation();
 
   const fetchIPAddress = async () => {
     const response = await fetch("https://api64.ipify.org?format=json");

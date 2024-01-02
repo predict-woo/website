@@ -15,7 +15,6 @@ class pixelit {
   private maxHeight: number | undefined;
   private maxWidth: number | undefined;
   private ctx: CanvasRenderingContext2D;
-  private endColorStats: any; // Define a more specific type if possible
 
   constructor(config: {
     to: HTMLCanvasElement | null;
