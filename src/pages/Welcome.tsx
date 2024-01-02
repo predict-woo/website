@@ -62,8 +62,10 @@ C:\>`);
   };
 
   const fetchHardwareInfo = async () => {
+    const anyNavigator = navigator as any;
+
     const userAgentText = navigator.userAgent;
-    const battery = await navigator?.getBattery();
+    const battery = await anyNavigator.getBattery();
     const batteryText =
       battery.level * 100 +
       "% " +
@@ -71,7 +73,7 @@ C:\>`);
       " (" +
       battery.dischargingTime +
       "s until full)";
-    const ramText = navigator.deviceMemory + "GB";
+    const ramText = anyNavigator.deviceMemory + "GB";
     setText((prev) =>
       prev
         .replace("<userAgent>", userAgentText)
@@ -80,7 +82,7 @@ C:\>`);
     );
   };
 
-  function getUnmaskedInfo(gl: RenderingContext) {
+  function getUnmaskedInfo(gl: any) {
     var unMaskedInfo = {
       renderer: "",
       vendor: "",

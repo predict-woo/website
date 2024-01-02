@@ -45,7 +45,6 @@ class pixelit {
     this.maxHeight = config.maxHeight;
     this.maxWidth = config.maxWidth;
     this.ctx = this.drawto.getContext("2d") as CanvasRenderingContext2D;
-    this.endColorStats = {};
   }
 
   /** hide from image */
